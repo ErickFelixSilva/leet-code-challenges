@@ -3,10 +3,6 @@ from typing import List
 
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        # for num in nums:
-        #     index = abs(num) - 1  # abs is used to handle numbers already marked as negative
-        #     nums[index] = -abs(nums[index])  # Ma
-        # return nums
         desired_array = range(1, len(nums), 1)
         nums.sort()
         return list(set(desired_array) - set(nums))
