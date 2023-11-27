@@ -6,18 +6,21 @@ from utils import printarResultadoEsperado
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
         nums.sort()
-        difference_counter: List[int] = []
-        for i in range(len(nums)-1, -1, -1):
-            j = i-1
-            frequency_counter = 1
-            operations = k
-            while j >= 0 and operations > 0:
-                operations -= (nums[i] - nums[j])
-                if operations >= 0:
-                    frequency_counter += 1
-                j -= 1
-            difference_counter.append(frequency_counter)
-        return max(difference_counter)
+
+        start = 0
+        max_freq = 1
+        window_sum = nums[0]
+        for end in range(1, len(nums)):
+            window_sum += nums[end]
+            total_increments = nums[end] * (end - start + 1) - window_sum
+
+            while total_increments > k:
+                window_sum -= nums[start]
+                start += 1
+                total_increments = nums[end] * (end - start + 1) - window_sum
+
+            max_freq = max(max_freq, end - start + 1)
+        return max_freq
 
 
 if __name__ == '__main__':

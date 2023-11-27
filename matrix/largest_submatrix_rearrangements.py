@@ -37,4 +37,5 @@ if __name__ == '__main__':
     printarResultadoEsperado(resultado, 2)
 
     resultado = s.largestSubmatrix([[1, 0, 1, 1, 1], [1, 1, 1, 1, 0], [1, 1, 1, 0, 0], [1, 1, 0, 0, 0]])
-Gue
+    printarResultadoEsperado(resultado, 9)
+
