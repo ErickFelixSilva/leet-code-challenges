@@ -1,5 +1,8 @@
-
+from functools import reduce
 
 if __name__ == '__main__':
-    teste = "SPPPPPPPSPPPSPSSSPPPPPPPPPPPPPPPPPSPPPPPPPPPPPPPPPPSPPPPPSPSPPPPPPSPSPPSPSPPPSPSPPSSPPPPPSPPSSPP"
+    teste = ["ab", "c"]
+    result = ''
+    print(reduce((lambda x, y: x + y), teste))
+
     print(teste.count('S'))
