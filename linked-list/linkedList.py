@@ -15,6 +15,12 @@ class LinkedList:
             last_node = last_node.next
         last_node.next = new_node
 
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
