@@ -21,6 +21,7 @@ class Solution:
             soma += i
         return soma - sum(nums)
 
+
 if __name__ == '__main__':
     s = Solution()
 
