@@ -11,7 +11,6 @@ class Solution:
         while node is not None:
             palindrome += str(node.val)
             node = node.next
-        print(palindrome)
         return palindrome == palindrome[::-1]
 
 
